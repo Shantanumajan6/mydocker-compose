@@ -5,6 +5,8 @@ services:
       - '80-85:80'
     volumes:
       - './indexes/coffee:/usr/local/apache2/htdocs'
+    networks:
+      - 'myvelocity' 
 
 
   myecom:
@@ -13,6 +15,8 @@ services:
       - '90-95:80'
     volumes:
       - './indexes/ecom:/usr/local/apache2/htdocs'
+    networks:
+      - 'myvelocity'
 
 
   myclass:
@@ -21,3 +25,10 @@ services:
       - '8080-8085:80'
     volumes:
       - './indexes/class:/usr/local/apache2/htdocs'
+    networks:
+      - 'myvelocity'
+
+
+networks:
+  myvelocity:
+    driver: bridge
