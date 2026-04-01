@@ -28,6 +28,15 @@ services:
     networks:
       - 'myvelocity'
 
+  mytomcat:
+    image: 'tomcat:10'
+    ports:
+      - '8090:8080'
+    volumes:
+      - './indexes/wars:/usr/local/tomcat/webapps/'
+    networks:
+      - 'myvelocity'
+
 
 networks:
   myvelocity:
